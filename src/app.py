@@ -506,12 +506,22 @@ def rebuild_embeddings():
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────
+# if __name__ == "__main__":
+#     logger.info("Starting Face Recognition API …")
+#     logger.info("  Dataset:    %s", DATASET_DIR)
+#     logger.info("  Embeddings: %s", EMBEDDINGS_DIR)
+
+#     # Load (or build) embeddings before accepting requests
+#     engine.load_embeddings()
+
+#     app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
+
 if __name__ == "__main__":
     logger.info("Starting Face Recognition API …")
     logger.info("  Dataset:    %s", DATASET_DIR)
     logger.info("  Embeddings: %s", EMBEDDINGS_DIR)
 
-    # Load (or build) embeddings before accepting requests
     engine.load_embeddings()
 
-    app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False, use_reloader=False)
