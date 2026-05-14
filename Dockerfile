@@ -27,7 +27,7 @@ COPY *.json ./
 RUN mkdir -p dataset embeddings
 
 # Expose port
-EXPOSE 5000
+EXPOSE 8080
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
