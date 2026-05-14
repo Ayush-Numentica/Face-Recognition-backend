@@ -1,0 +1,9 @@
+flask>=2.3.0
+flask-cors>=4.0.0
+numpy>=1.23.0
+opencv-python>=4.7.0
+mtcnn>=0.1.1
+tensorflow>=2.10.0
+keras-facenet>=0.3.2
+Pillow>=9.0.0
+scikit-learn>=1.2.0
