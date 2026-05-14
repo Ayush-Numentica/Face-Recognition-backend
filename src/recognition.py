@@ -120,7 +120,7 @@ class FaceRecognitionEngine:
         results = self.detector.detect_faces(rgb)
         faces = []
         for det in results:
-            if det["confidence"] < 0.80:
+            if det["confidence"] < 0.70:
                 continue
             face_rgb, box = self._crop_face(rgb, bgr_image.shape, det["box"])
             if face_rgb is not None:
